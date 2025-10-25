@@ -5,8 +5,8 @@ Custom Homebrew tap for utilities maintained by [@mattjmcnaughton](https://githu
 ## Usage
 
 ```bash
-brew tap mattjmcnaughton/tools
-brew install mattjmcnaughton/tools/context7-cli
+brew tap mattjmcnaughton/tap
+brew install mattjmcnaughton/tap/context7-cli
 ```
 
 Update with Homebrew’s standard workflow:
@@ -26,7 +26,7 @@ Formula definitions live in `Formula/`. When publishing a new release:
 
 1. Update the formula version, URLs, and SHA256 checksums.
 2. Run `brew audit --strict --new-formula Formula/<formula>.rb`.
-3. Install from the tap to verify: `brew install mattjmcnaughton/tools/<formula>`.
+3. Install from the tap to verify: `brew install mattjmcnaughton/tap/<formula>`.
 4. Commit changes and push to `main`.
 
 ### Fetching release checksums
