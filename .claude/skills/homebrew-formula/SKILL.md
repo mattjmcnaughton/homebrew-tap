@@ -17,12 +17,14 @@ Ask the user whether to create a new formula or update an existing one.
 
 For a **new formula**, collect:
 - Formula name (kebab-case, e.g., `context7-cli`)
-- Short description
 - GitHub repository (owner/repo format)
-- License (e.g., MIT, Apache-2.0)
 - Version to release
-- Binary name pattern in the tarball (e.g., `context7-cli-*`)
-- Test command and expected output substring
+
+When the GitHub repository is provided, automatically fetch the README and LICENSE files to infer:
+- Short description (from README)
+- License type (from LICENSE file)
+
+The binary name pattern typically matches the formula name (e.g., `{formula-name}-*`).
 
 For an **update**, collect:
 - Which formula to update (check `Formula/` directory)
@@ -104,17 +106,19 @@ end
 
 ### Step 5: Validate
 
-Run Homebrew audit:
+After creating or updating the formula file, ensure it has proper read permissions:
 
 ```bash
-brew audit --strict Formula/{formula-name}.rb
+chmod a+r Formula/{formula-name}.rb
 ```
 
-For new formulas, add `--new-formula`:
+Run Homebrew style check:
 
 ```bash
-brew audit --strict --new-formula Formula/{formula-name}.rb
+brew style Formula/{formula-name}.rb
 ```
+
+This validates the formula against Homebrew's Ruby style guidelines.
 
 ### Step 6: Test Installation (Optional)
 
