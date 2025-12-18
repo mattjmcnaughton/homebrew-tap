@@ -19,13 +19,32 @@ brew upgrade context7-cli
 ## Available Formulas
 
 - `context7-cli` — CLI helper around Context7 AI workflows. Project source: https://github.com/mattjmcnaughton/context7-cli
+- `ds-store-no-more` — CLI for cleaning up .DS_Store files and other unwanted filesystem clutter. Project source: https://github.com/mattjmcnaughton/ds-store-no-more
 
 ## Development
 
-Formula definitions live in `Formula/`. When publishing a new release:
+Formula definitions live in `Formula/`.
+
+### Using Claude Code
+
+This repository includes a Claude Code skill that automates formula creation and updates. With Claude Code running in this directory, simply ask:
+
+- "Create a new formula for `owner/repo` at version `x.y.z`"
+- "Update `formula-name` to version `x.y.z`"
+
+Claude Code will automatically:
+1. Fetch release assets from GitHub
+2. Compute SHA256 checksums for each platform
+3. Infer description and license from the repository
+4. Generate or update the formula file
+5. Run style validation
+
+### Manual workflow
+
+When publishing a new release manually:
 
 1. Update the formula version, URLs, and SHA256 checksums.
-2. Run `brew audit --strict --new-formula Formula/<formula>.rb`.
+2. Run `brew style Formula/<formula>.rb` to validate.
 3. Install from the tap to verify: `brew install mattjmcnaughton/tap/<formula>`.
 4. Commit changes and push to `main`.
 
