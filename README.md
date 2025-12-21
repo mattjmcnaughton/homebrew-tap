@@ -20,6 +20,7 @@ brew upgrade context7-cli
 
 - `context7-cli` — CLI helper around Context7 AI workflows. Project source: https://github.com/mattjmcnaughton/context7-cli
 - `ds-store-no-more` — CLI for cleaning up .DS_Store files and other unwanted filesystem clutter. Project source: https://github.com/mattjmcnaughton/ds-store-no-more
+- `rtree` — Fast, deterministic directory tree visualization tool written in Rust. Project source: https://github.com/mattjmcnaughton/rtree
 
 ## Development
 
