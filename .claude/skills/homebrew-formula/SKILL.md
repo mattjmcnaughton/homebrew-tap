@@ -104,26 +104,75 @@ end
 - Version field: No `v` prefix (`1.3.0` not `v1.3.0`)
 - URL paths: Include `v` prefix (`v1.3.0`)
 
-### Step 5: Validate
+### Step 5: Validate and Test Locally
 
-After creating or updating the formula file, ensure it has proper read permissions:
+After creating or updating the formula file:
+
+1. **Ensure proper read permissions:**
 
 ```bash
 chmod a+r Formula/{formula-name}.rb
 ```
 
-Run Homebrew style check:
+2. **Commit changes before running Homebrew checks:**
+
+Homebrew workflows may read tap metadata from Git and expect a clean, committed state. Uncommitted changes can cause edits to not be picked up, "dirty working tree" errors, or differences between local and CI behavior.
 
 ```bash
-brew style Formula/{formula-name}.rb
+git add Formula/{formula-name}.rb
+git commit -m "WIP: update {formula-name} formula"
 ```
 
-This validates the formula against Homebrew's Ruby style guidelines.
+Use `git commit --amend --no-edit` for rapid iteration without creating many commits.
 
-### Step 6: Test Installation (Optional)
+3. **Ensure the local tap is registered:**
 
-Suggest the user test locally:
+Homebrew requires formulae to live inside a tap. Register the local clone:
 
 ```bash
-brew install --build-from-source Formula/{formula-name}.rb
+brew tap mattjmcnaughton/tap-local /Users/mattjmcnaughton/code/sandbox/homebrew-tap
+```
+
+4. **Run validation commands using the tap-qualified name:**
+
+```bash
+brew style  mattjmcnaughton/tap-local/{formula-name}
+brew audit  --strict mattjmcnaughton/tap-local/{formula-name}
+```
+
+5. **Test installation:**
+
+```bash
+brew reinstall --build-from-source mattjmcnaughton/tap-local/{formula-name} --verbose
+brew test mattjmcnaughton/tap-local/{formula-name}
+```
+
+#### Iteration loop
+
+For rapid development:
+
+```bash
+# Edit Formula/{formula-name}.rb
+git add Formula/{formula-name}.rb
+git commit --amend --no-edit
+
+brew reinstall --build-from-source mattjmcnaughton/tap-local/{formula-name} --verbose
+brew test   mattjmcnaughton/tap-local/{formula-name}
+brew audit  --strict mattjmcnaughton/tap-local/{formula-name}
+brew style  mattjmcnaughton/tap-local/{formula-name}
+```
+
+#### Verification commands
+
+```bash
+brew tap                                              # List installed taps
+brew info mattjmcnaughton/tap-local/{formula-name}    # Confirm formula is loaded
+```
+
+#### Cleanup
+
+When done testing, unregister the local tap (does not delete the repo):
+
+```bash
+brew untap mattjmcnaughton/tap-local
 ```
