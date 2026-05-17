@@ -171,8 +171,9 @@ brew info mattjmcnaughton/tap-local/{formula-name}    # Confirm formula is loade
 
 #### Cleanup
 
-When done testing, unregister the local tap (does not delete the repo):
+When done testing, uninstall any formulae installed from the local tap before unregistering it (Homebrew refuses to untap while installed formulae remain):
 
 ```bash
+brew uninstall {formula-name}
 brew untap mattjmcnaughton/tap-local
 ```
