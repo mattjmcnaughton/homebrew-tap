@@ -21,7 +21,9 @@ brew upgrade context7-cli
 - `context7-cli` — CLI helper around Context7 AI workflows. Project source: https://github.com/mattjmcnaughton/context7-cli
 - `ds-store-no-more` — CLI for cleaning up .DS_Store files and other unwanted filesystem clutter. Project source: https://github.com/mattjmcnaughton/ds-store-no-more
 - `grov` — Service orchestrator for local development with per-worktree isolation. Project source: https://github.com/mattjmcnaughton/grov
+- `rasm-tui` — Terminal UI for managing AWS Secrets Manager with Vim-style navigation. Project source: https://github.com/mattjmcnaughton/rasm-tui
 - `rtree` — Fast, deterministic directory tree visualization tool written in Rust. Project source: https://github.com/mattjmcnaughton/rtree
+- `skillvendor` — Vendor remote skills from git repositories into local skill directories. Project source: https://github.com/mattjmcnaughton/skillvendor
 - `sprite` — CLI for managing Sprites. Project source: https://sprites.dev
 
 ## Development
