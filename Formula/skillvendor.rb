@@ -1,30 +1,30 @@
 class Skillvendor < Formula
   desc "Vendor remote skills from git repositories into local skill directories"
   homepage "https://github.com/mattjmcnaughton/skillvendor"
-  version "1.0.0"
+  version "1.0.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/mattjmcnaughton/skillvendor/releases/download/v1.0.0/skillvendor-macos-arm64.tar.gz"
-      sha256 "6a9a5fa4b1930a58dc22c53ccb1810fc7c904e0fa094d337d5d266f393af4d80"
+      url "https://github.com/mattjmcnaughton/skillvendor/releases/download/v1.0.1/skillvendor-macos-arm64.tar.gz"
+      sha256 "935f6d54e632d85d760772d97fbd83ddc9f2f7e5aa21d8f94a46a08d45a69bb7"
     end
 
     on_intel do
-      url "https://github.com/mattjmcnaughton/skillvendor/releases/download/v1.0.0/skillvendor-macos-x86_64.tar.gz"
-      sha256 "ee6cc37854ae09c817a8e13433dbe49141f2554eaa331dd6d972b90468ca9f41"
+      url "https://github.com/mattjmcnaughton/skillvendor/releases/download/v1.0.1/skillvendor-macos-x86_64.tar.gz"
+      sha256 "c726ff2a37ba49dd1251756e93b39273a1a21ba490ff7936e1824f10dbe48d51"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/mattjmcnaughton/skillvendor/releases/download/v1.0.0/skillvendor-linux-arm64.tar.gz"
-      sha256 "ca1938d3b1ad98fbf39847017728dc714e62d62b4df2bc0079141300a2224cfd"
+      url "https://github.com/mattjmcnaughton/skillvendor/releases/download/v1.0.1/skillvendor-linux-arm64.tar.gz"
+      sha256 "49c41664993fe757849eeb1c7e5770aded4ccb11a46cbbdd0d13ade2804399b4"
     end
 
     on_intel do
-      url "https://github.com/mattjmcnaughton/skillvendor/releases/download/v1.0.0/skillvendor-linux-x86_64.tar.gz"
-      sha256 "2d88e9a0b012c228b254358151553d4e7337a4f0e63ccc08320c4dccc95e1327"
+      url "https://github.com/mattjmcnaughton/skillvendor/releases/download/v1.0.1/skillvendor-linux-x86_64.tar.gz"
+      sha256 "e7bed68db80b078f4c573c57fc7b5499a00f9810da2c474bcdb9ad957b6b09cb"
     end
   end
 
