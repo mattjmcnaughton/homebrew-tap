@@ -20,6 +20,7 @@ brew upgrade context7-cli
 
 - `context7-cli` — CLI helper around Context7 AI workflows. Project source: https://github.com/mattjmcnaughton/context7-cli
 - `ds-store-no-more` — CLI for cleaning up .DS_Store files and other unwanted filesystem clutter. Project source: https://github.com/mattjmcnaughton/ds-store-no-more
+- `fetch-context` — Pull external context (repos, web pages) into the current repo for agents. Project source: https://github.com/mattjmcnaughton/fetch-context
 - `file-lock` — Encrypt declared sensitive files to protect them from coding agents. Project source: https://github.com/mattjmcnaughton/file-lock
 - `grov` — Service orchestrator for local development with per-worktree isolation. Project source: https://github.com/mattjmcnaughton/grov
 - `rasm-tui` — Terminal UI for managing AWS Secrets Manager with Vim-style navigation. Project source: https://github.com/mattjmcnaughton/rasm-tui
