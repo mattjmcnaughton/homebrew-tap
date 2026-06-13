@@ -27,6 +27,7 @@ brew upgrade context7-cli
 - `rtree` — Fast, deterministic directory tree visualization tool written in Rust. Project source: https://github.com/mattjmcnaughton/rtree
 - `skillvendor` — Vendor remote skills from git repositories into local skill directories. Project source: https://github.com/mattjmcnaughton/skillvendor
 - `sprite` — CLI for managing Sprites. Project source: https://sprites.dev
+- `worktree-manager` — Go CLI for managing Git worktrees as task-oriented development environments. Project source: https://github.com/mattjmcnaughton/worktree-manager
 
 ## Development
 
